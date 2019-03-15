@@ -1,0 +1,11 @@
+
+
+
+sudo docker container run --rm --volumes-from nombre_contededor_volumen_datos -v $(pwd):/backup nombre_imagen tar cvf ruta_donde_se_guardara_backup_en_este_contenedor ruta_donde_esta_info
+
+
+$(pwd) -> ruta en la maquina local hasta el directorio actual
+rm -> es para eliminar el contenedor luego de que termine de ejecutar
+
+ejm.
+sudo docker container run --rm --volumes-from contedor_como_volumen_datos -v $(pwd):/backup ubuntu tar cvf /backup/backup.tar /datos

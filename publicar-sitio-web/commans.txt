@@ -1,0 +1,49 @@
+-- ========================================== PARA INSPECCIONAR UNA IMAGEN
+
+sudo docker image inspect nombre_imagen
+
+ejm.
+sudo docker image inspect nginx
+
+-- ============================================================ PUBLICAR TODOS LOS PUERTOS EXPUESTOS QUE TIENE EL CONTENEDOR
+
+sudo docker container run --rm -d --publish-all nombre_imagen
+
+--publish-all -> publica todos los puertos expuestos por el contenedor hacia puertos de nuestra maquina de forma aleatoria.
+
+ejm.
+sudo docker container run --rm -d --publish-all nginx
+
+-- ======================================================= VER EL LOG 
+
+sudo docker container logs -f nombre_contenedor
+
+ejm.
+sudo docker container logs -f objective_feistel
+
+
+
+
+-- ======================================================= PUBLICAR CONTENEDOR EN UN PUERTO ESPECIFICO
+
+sudo docker container run --rm -d -p 8081:80 nombre_imagen
+
+-p -> es para especificar el puerto local:contenedor
+
+ejm.
+sudo docker container run --rm -d -p 8081:80 nginx
+
+ejm.
+sudo docker container run --name myweb-site -d -p 8081:80 nginx
+
+
+
+
+-- ========================================================= CONSTRUIR IMAGEN APARTIR DE UN DOCKERFILE
+
+sudo docker image build -t nombre_imagen .
+
+. -> significa que el archivo Dockerfile esta en el mismo directorio
+
+ejm.
+sudo docker image build -t myweb .

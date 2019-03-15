@@ -1,0 +1,8 @@
+sudo docker container run --name ejemplo-contenedor -v /home/kok/Cursos/docker-test/volumen-de-datos-sencillo/datos/:/ejemplo-volumen -it ubuntu /bin/bash
+
+-v -> es para indicar que se va a crear un volumen de datos, luego se escribe la ruta donde esta la capeta que se convertica en el volumen de datos : ruta donde se colocara el volumen dentro del contenedor
+-it -> es para iniciar el contenedor en modo consola 
+
+ejm.
+
+docker container run --name ejemplo-contenedor -v /home/Cursos/curso-docker/docker-test/volumen-de-datos-sencillo/datos:/ejemplo-volumen -it ubuntu /bin/bash

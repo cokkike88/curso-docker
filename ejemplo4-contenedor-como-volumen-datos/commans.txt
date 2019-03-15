@@ -1,0 +1,17 @@
+
+-- ================== CREAR EL CONTENEDOR QUE SERA UN CONTENEDOR COMO VOLUMEN DE DATOS ======================
+
+sudo docker container run --name nombre_contenedor -v ruta_donde_se_almacenara_el_volumen_datos busybox
+
+-- busybox -> es una imagen
+
+ejem.
+sudo docker container run --name contendedor_como_volumen_datos -v /datos busybox
+
+-- ==================== CREAR EL CONTENEDOR QUE USARA UN CONTENEDOR COMO VOLUMEN DE DATOS ===========================
+
+sudo docker container run --name nombre_contenedor --volumes-from nombre_del_contenedor_que_es_volumend_datos -it nombre_imagen 
+
+ejm.
+
+sudo docker container run --name app1 --volumes-from contedor_como_volumen_datos -it ubuntu /bin/bash
